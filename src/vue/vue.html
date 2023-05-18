@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 - First React Three Fiber Application</title>
+</head>
+
+    <body>
+    <template>
+        <div>
+      <VueR3F>
+        <ambientLight />
+        <pointLight position="[10, 10, 10]" />
+        <mesh position="[0, 0, -5]">
+          <boxBufferGeometry />
+          <meshStandardMaterial color="red" />
+        </mesh>
+      </VueR3F>
+      <div v-if="people">
+        <h1>People</h1>
+        <ul>
+          <li v-for="person in people" :key="person.name">
+            {{ person.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="app"></div>
+    
+  </template>
+  <script src="vue.js"></script>
+    </body>
+    
+  </html> -->
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Vue.js and SWAPI Example</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+      <div id="app">
+        <h1>Star Wars Characters</h1>
+        <ul>
+          <li v-for="character in characters" :key="character.name">
+            <h2>{{ character.name }}</h2>
+            <ul>
+              <li v-for="film in character.films" :key="film">{{ film.title }}</li>
+            </ul>
+          </li>
+        </ul>
+        <div v-if="prevPage || nextPage">
+          <button v-if="prevPage" @click="loadCharacters(prevPage)">Previous Page</button>
+          <button v-if="nextPage" @click="loadCharacters(nextPage)">Next Page</button>
+        </div>
+      </div>
+      <script src="vue.js"></script>
+    </body>
+  </html>
+  
